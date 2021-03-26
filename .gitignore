@@ -34,3 +34,20 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+# Large files of VIVE Wave XR Essence module
+# 389MB Assets\Samples\VIVE Wave XR Plugin - Essence\3.99.48-preview.1\Essence\BallsRoom\Animator\BallsAnimator.anim
+#  23MB Assets\Samples\VIVE Wave XR Plugin - Essence\3.99.48-preview.1\Essence\SeaOfCube\Prefabs\SeaOfCube20x20x20Rigid.prefab
+#  18MB Assets\Samples\VIVE Wave XR Plugin - Essence\3.99.48-preview.1\Essence\SeaOfCube\Resource\BGM\background1.wav
+#  10MB Assets\Samples\VIVE Wave XR Plugin - Essence\3.99.48-preview.1\Essence\SeaOfCube\Textures\SeaOfCubeReflectionProbe.exr
+Assets/Samples\VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/BallsRoom/Animator/BallsAnimator.anim
+Assets/Samples\VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Prefabs/SeaOfCube20x20x20Rigid.prefab
+Assets/Samples\VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Textures/SeaOfCubeReflectionProbe.exr
+Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Resources/BGM/background1.wav
+# meta files
+Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/BallsRoom/Animator/BallsAnimator.anim.meta
+Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Prefabs/SeaOfCube20x20x20Rigid.prefab.meta
+Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Textures/SeaOfCubeReflectionProbe.exr.meta
+Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Resources/BGM/background1.wav.meta
+
