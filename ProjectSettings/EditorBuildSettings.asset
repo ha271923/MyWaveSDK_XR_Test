@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Samples/VIVE Wave XR Plugin/3.99.48-preview.1/PureUnity/VRTestApp/Scenes/VRTestApp.unity
+    guid: 5d4449c9fb95a664db7a4640df1da07b
+  m_configObjects:
+    com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: 830b4df877d4f7447b604b70e23d0b0b,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e79ab5f0b99abd34b8c42f256555f7e7,
+      type: 2}
