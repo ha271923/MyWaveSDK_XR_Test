@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:UnityPackages/com.unity.render-pipelines.core@7.3.1/Runtime/Debugging/Prefabs/Scripts.meta
+guid: b19fee85706ab484797cfd03e7fcb83b
+=======
+guid: 36eba50cce11cbf4cbbbcff3ce00a932
+>>>>>>> [Unity] Add MSAAOnOffTest:srp/Assets/Samples/Wave/Essence/Essence/MSAAOnOffTest/Scripts.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
