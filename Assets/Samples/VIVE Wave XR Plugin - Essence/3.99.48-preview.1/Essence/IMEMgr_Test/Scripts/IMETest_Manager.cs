@@ -9,10 +9,14 @@ using Wave.Native;
 
 public class IMETest_Manager : MonoBehaviour
 {
-	public bool isShowingKeyboard = false;
-	public bool isIMEManagerInitialized = false;
+	[SerializeField]
+	private bool isShowingKeyboard = false;
+	[SerializeField]
+	private bool isIMEManagerInitialized = false;
+
 	public InputField onInputCompletedwithObjectResultText, onInputClickedwithObjectResultText;
 	private string onInputCompletedwithObjectResultTextContent, onInputClickedwithObjectResultTextContent;
+
 	private IMEManager imeManagerInstance = null;
 	private IMEManager.IMEParameter currentIMEParameter = null;
 	private IMEManager.IMEParameter currentIMENumericParameter = null;
@@ -73,6 +77,15 @@ public class IMETest_Manager : MonoBehaviour
 		}
 	}
 
+	public void HideKeyboard()
+	{
+		if (isShowingKeyboard && isIMEManagerInitialized)
+		{
+			Log.i(LOG_TAG, "HideKeyboard: done");
+			imeManagerInstance.hideKeyboard();
+			isShowingKeyboard = false;
+		}
+	}
 	public void ShowKeyboardWithEnablePanel()
 	{
 		if (!isShowingKeyboard && isIMEManagerInitialized)
