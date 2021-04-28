@@ -8,6 +8,7 @@
 // conditions signed by you and all SDK and API requirements,
 // specifications, and documentation provided by HTC to You."
 
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using Wave.Essence;
@@ -19,24 +20,61 @@ public class IMEWrapperExample : MonoBehaviour {
 	private static string LOG_TAG = "IMEWrapperExample";
 	private IMEManagerWrapper mIMEWrapper;
 	private string mInputContent = null;
+	private StringBuilder onInputClickedSB = new StringBuilder();
 
 	private bool mIsButton = false;
-
+	private bool mIsShowKeyboardInputPanel = false;
 	void Start() {
 		mIMEWrapper = IMEManagerWrapper.GetInstance();
 		mIMEWrapper.SetDoneCallback(InputDoneCallback);
-    }
+		mIMEWrapper.SetClickedCallback(InputClickCallback);
+	}
 
     private void InputDoneCallback(IMEManagerWrapper.InputResult results) {
 		Log.d(LOG_TAG, "inputDoneCallback:" + results.GetContent());
 		mInputContent = results.GetContent();
-
-		// Note: directly update input field text will exception
+		// Note: directly update input field text in UI thread will exception
 		// use LastUpdate to update Input field text
+
+	}
+	private void InputClickCallback(IMEManagerWrapper.InputResult results)
+	{
+		Log.d(LOG_TAG, "inputDoneCallback:  clickedKeyChar=" + results.GetContent());
+
+		// Note: directly update input field text in UI thread will exception
+		// use LastUpdate to update Input field text
+		if (results.GetKeyCode() == IMEManager.InputResult.Key.BACKSPACE)
+		{
+			if (myInputField.text.Length > 1)
+			{
+				mInputContent = myInputField.text.Substring(0, myInputField.text.Length - 1);
+			}
+			else if (myInputField.text.Length == 1)
+			{
+				mInputContent = "";
+			}
+
+		}
+		else if (results.GetKeyCode() == IMEManager.InputResult.Key.ENTER)
+		{
+			Log.d(LOG_TAG, "on clicked enter key");
+			HideKeyboard();
+		}
+		else if (results.GetKeyCode() == IMEManager.InputResult.Key.CLOSE)
+		{
+			Log.d(LOG_TAG, "on clicked close key");
+			HideKeyboard();
+		}
+		else
+		{
+			mInputContent = myInputField.textComponent.text + results.GetContent();
+		}
+
 	}
 
+
 	private void UpdateInputField(string str) {
-		Log.d(LOG_TAG, "UpdateTargetText:" + str);
+		Log.d(LOG_TAG, "UpdateInputField:" + str);
 		if (myInputField != null && str != null) {
 			myInputField.textComponent.text = str;
 			myInputField.placeholder.GetComponent<Text>().text = "";
@@ -52,14 +90,26 @@ public class IMEWrapperExample : MonoBehaviour {
 		}
 	}
 
+	private InputField GetInputField()
+	{
+		InputField inputObj = GetComponent<InputField>();
+		return inputObj;
+	}
+
 	private InputField GetInputField(string name) {
 		InputField inputObj = GameObject.Find(name).GetComponent<InputField>();
 		return inputObj;
 	}
-		
+
+	public void HideKeyboard()
+	{
+		mIMEWrapper.Hide();
+	}
+
+
 	public void ShowKeyboardEng() {
 		Log.i(LOG_TAG, "showKeyboardEng");
-		myInputField = GetInputField("NameInputField");
+		myInputField = GetInputField();
 		if (myInputField != null) {
 			myInputField.shouldHideMobileInput = false;
 			Log.i(LOG_TAG, "NameInputField.text = "+ myInputField.textComponent.text);
@@ -68,12 +118,13 @@ public class IMEWrapperExample : MonoBehaviour {
 		mIMEWrapper.SetTitle("Enter Username...");
 		mIMEWrapper.SetLocale(IMEManagerWrapper.Locale.zh_CN);
 		mIMEWrapper.SetAction (IMEManagerWrapper.Action.Enter);
-		mIMEWrapper.Show();
+		mIMEWrapper.SetText(myInputField.textComponent.text);
+		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
 	}
 
 	public void ShowKeyboardPassword() {
 		Log.i(LOG_TAG, "showKeyboardPassword");
-		myInputField = GetInputField("PasswordInputField");
+		myInputField = GetInputField();
 		if (myInputField != null) {
 			myInputField.shouldHideMobileInput = false;
 			Log.i(LOG_TAG, "PasswordInputField.text = "+ myInputField.textComponent.text);
@@ -82,7 +133,8 @@ public class IMEWrapperExample : MonoBehaviour {
 		mIMEWrapper.SetTitle("Enter password...");
 		mIMEWrapper.SetLocale(IMEManagerWrapper.Locale.en_US);
 		mIMEWrapper.SetAction (IMEManagerWrapper.Action.Send);
-		mIMEWrapper.Show();
+		mIMEWrapper.SetText(myInputField.textComponent.text);
+		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
 
 	}
 
@@ -91,7 +143,7 @@ public class IMEWrapperExample : MonoBehaviour {
 		Log.i(LOG_TAG, "ShowKeyboardEmpty");
 		//Re-init all parameters
 		mIMEWrapper.InitParameter();
-		myInputField = GetInputField("EmptyInputField");
+		myInputField = GetInputField();
 		if (myInputField != null)
 		{
 			myInputField.shouldHideMobileInput = false;
@@ -100,7 +152,8 @@ public class IMEWrapperExample : MonoBehaviour {
 		}
 		mIMEWrapper.SetTitle("Enter text...");
 		mIMEWrapper.SetAction(IMEManagerWrapper.Action.Send);
-		mIMEWrapper.Show();
+		mIMEWrapper.SetText(myInputField.textComponent.text);
+		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
 
 	}
 
@@ -118,7 +171,8 @@ public class IMEWrapperExample : MonoBehaviour {
 		}
 		mIMEWrapper.SetTitle("ShowKeyboardButton...");
 		mIMEWrapper.SetAction(IMEManagerWrapper.Action.Send);
-		mIMEWrapper.Show();
+		mIMEWrapper.SetText(myInputField.textComponent.text);
+		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
 	}
 
 	void LateUpdate() {
