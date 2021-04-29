@@ -26,13 +26,13 @@ public class IMEWrapperExample : MonoBehaviour {
 	private bool mIsShowKeyboardInputPanel = false;
 	void Start() {
 		mIMEWrapper = IMEManagerWrapper.GetInstance();
-		mIMEWrapper.SetDoneCallback(InputDoneCallback);
+		// mIMEWrapper.SetDoneCallback(InputDoneCallback);  // do nothing to prevent string cat into UI InputField twice by both callback
 		mIMEWrapper.SetClickedCallback(InputClickCallback);
 	}
 
     private void InputDoneCallback(IMEManagerWrapper.InputResult results) {
 		Log.d(LOG_TAG, "inputDoneCallback:" + results.GetContent());
-		mInputContent = results.GetContent();
+		mInputContent = myInputField.textComponent.text + results.GetContent();
 		// Note: directly update input field text in UI thread will exception
 		// use LastUpdate to update Input field text
 
@@ -45,11 +45,11 @@ public class IMEWrapperExample : MonoBehaviour {
 		// use LastUpdate to update Input field text
 		if (results.GetKeyCode() == IMEManager.InputResult.Key.BACKSPACE)
 		{
-			if (myInputField.text.Length > 1)
+			if (myInputField.textComponent.text.Length > 1)
 			{
-				mInputContent = myInputField.text.Substring(0, myInputField.text.Length - 1);
+				mInputContent = myInputField.textComponent.text.Substring(0, myInputField.textComponent.text.Length - 1);
 			}
-			else if (myInputField.text.Length == 1)
+			else if (myInputField.textComponent.text.Length == 1)
 			{
 				mInputContent = "";
 			}
@@ -68,6 +68,7 @@ public class IMEWrapperExample : MonoBehaviour {
 		else
 		{
 			mInputContent = myInputField.textComponent.text + results.GetContent();
+			Log.d(LOG_TAG, "inputDoneCallback   mInputContent=" + mInputContent);
 		}
 
 	}
@@ -111,7 +112,7 @@ public class IMEWrapperExample : MonoBehaviour {
 		Log.i(LOG_TAG, "showKeyboardEng");
 		myInputField = GetInputField();
 		if (myInputField != null) {
-			myInputField.shouldHideMobileInput = false;
+			myInputField.shouldHideMobileInput = true;
 			Log.i(LOG_TAG, "NameInputField.text = "+ myInputField.textComponent.text);
 			mIMEWrapper.SetText(myInputField.textComponent.text);
 		}
@@ -135,7 +136,6 @@ public class IMEWrapperExample : MonoBehaviour {
 		mIMEWrapper.SetAction (IMEManagerWrapper.Action.Send);
 		mIMEWrapper.SetText(myInputField.textComponent.text);
 		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
-
 	}
 
 	public void ShowKeyboardEmpty()
