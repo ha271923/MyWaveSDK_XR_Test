@@ -22,6 +22,7 @@ public class IMEManagerServer : MonoBehaviour
 	private static string LOG_TAG = "IMEManagerServer";
 	private IMEManagerWrapper mIMEWrapper;
 	private string mInputContent = null;
+	private StringBuilder onInputClickedSB = new StringBuilder();
 
 	private bool mIsShowKeyboardInputPanel = false;
 	void Start()
@@ -100,6 +101,7 @@ public class IMEManagerServer : MonoBehaviour
 			setCallbacks(s_focusGO);
 			Log.i(LOG_TAG, "InputField.textComponent.text = " + m_InputField.textComponent.text);
 			mIMEWrapper.SetText(m_InputField.textComponent.text);
+			onInputClickedSB.Append(m_InputField.textComponent.text);
 		}
 		else
 		{
@@ -121,7 +123,8 @@ public class IMEManagerServer : MonoBehaviour
 	public void InputDoneCallbackImpl(IMEManagerWrapper.InputResult results)
 	{
 		Log.d(LOG_TAG, "inputDoneCallbackImpl: " + results.GetContent());
-		mInputContent = m_InputField.textComponent.text + results.GetContent();
+		onInputClickedSB.Append(results.GetContent());
+		mInputContent = onInputClickedSB.ToString();
 	}
 	public void InputClickCallbackImpl(IMEManagerWrapper.InputResult results)
 	{
@@ -156,7 +159,8 @@ public class IMEManagerServer : MonoBehaviour
 			}
 			else
 			{
-				mInputContent = m_InputField.textComponent.text + results.GetContent();
+				onInputClickedSB.Append(results.GetContent());
+				mInputContent = onInputClickedSB.ToString();
 				Log.d(LOG_TAG, "InputClickCallbackImpl   mInputContent=" + mInputContent + "  m_InputField=" + m_InputField + "  m_InputField.text="+ m_InputField.text + "  m_InputField.textComponent.text=" + m_InputField.textComponent.text );
 			}
 		}
@@ -167,25 +171,39 @@ public class IMEManagerServer : MonoBehaviour
 
 	private void UpdateInputField(string str)
 	{
-		Log.d(LOG_TAG, "XX UpdateInputField()   m_InputField=" + m_InputField + "  UpdateInputField:" + str);
+		Log.d(LOG_TAG, "XX UpdateInputField()   m_InputField=" + m_InputField + "  str=" + str);
 		if (m_InputField != null && str != null)
 		{
-			Log.d(LOG_TAG, "UpdateInputField()   m_InputField.text=" + m_InputField.text + "  str=" + str);
-			Log.d(LOG_TAG, "UpdateInputField()   m_InputField.textComponent.text=" + m_InputField.textComponent.text + "  str=" + str);
-			m_InputField.textComponent.text = str;
+
+			// m_InputField.textComponent.text = str;
+			m_InputField.text = str;
+			/*
 			var childCount = s_focusGO.transform.childCount;
 			if (childCount != 0)
+			{
 				for (int i = 0; i < childCount; i++)
+				{
 					if (s_focusGO.transform.GetChild(i).gameObject.transform.name == "Text_Field")
 					{
 						Log.d(LOG_TAG, "found Text_Field GO");
 						GameObject childGO = s_focusGO.transform.GetChild(i).gameObject;
-						if (childGO.transform.GetChild(i).gameObject.transform.name == "Placeholder") {
+						if (childGO.transform.GetChild(i).gameObject.transform.name == "Placeholder")
+						{
+							Log.d(LOG_TAG, "found Placeholder GO");
 							GameObject placeholderGO = childGO.transform.GetChild(i).gameObject;
 							placeholderGO.GetComponent<TMP_Text>().SetText("");
 						}
+						if (childGO.transform.GetChild(i).gameObject.transform.name == "Text_Input")
+						{
+							Log.d(LOG_TAG, "found Text_Input GO");
+							GameObject text_inputGO = childGO.transform.GetChild(i).gameObject;
+							text_inputGO.GetComponent<TMP_Text>().SetText(str);
+						}
 
 					}
+				}
+			}
+			*/
 		}
 		else {
 			Log.d(LOG_TAG, "m_InputField=" + m_InputField + "   str=" + str);
