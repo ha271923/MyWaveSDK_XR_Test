@@ -22,7 +22,7 @@ public class IMEManagerServer : MonoBehaviour
 	private static string LOG_TAG = "IMEManagerServer";
 	private IMEManagerWrapper mIMEWrapper;
 	private string mInputContent = null;
-	private StringBuilder onInputClickedSB = new StringBuilder();
+	private StringBuilder onInputClickedSB;
 
 	private bool mIsShowKeyboardInputPanel = false;
 	void Start()
@@ -99,9 +99,9 @@ public class IMEManagerServer : MonoBehaviour
 		{
 			m_InputField.shouldHideMobileInput = true;
 			setCallbacks(s_focusGO);
-			Log.i(LOG_TAG, "InputField.textComponent.text = " + m_InputField.textComponent.text);
-			mIMEWrapper.SetText(m_InputField.textComponent.text);
-			onInputClickedSB.Append(m_InputField.textComponent.text);
+			Log.i(LOG_TAG, "InputField.text = " + m_InputField.text);
+			onInputClickedSB = new StringBuilder(m_InputField.text);
+			mIMEWrapper.SetText(m_InputField.text);
 		}
 		else
 		{
@@ -110,7 +110,6 @@ public class IMEManagerServer : MonoBehaviour
 		mIMEWrapper.SetTitle("Input...");
 		mIMEWrapper.SetLocale(IMEManagerWrapper.Locale.en_US);
 		mIMEWrapper.SetAction(IMEManagerWrapper.Action.Enter);
-		mIMEWrapper.SetText(m_InputField.textComponent.text);
 		mIMEWrapper.Show(mIsShowKeyboardInputPanel);
 	}
 
@@ -118,7 +117,10 @@ public class IMEManagerServer : MonoBehaviour
 	{
 		mIMEWrapper.Hide();
 		s_focusGO = null;
+		onInputClickedSB = null;
 	}
+
+
 
 	public void InputDoneCallbackImpl(IMEManagerWrapper.InputResult results)
 	{
@@ -132,16 +134,16 @@ public class IMEManagerServer : MonoBehaviour
 
 		// Note: directly update input field text in UI thread will exception
 		// use LastUpdate to update Input field text
-		if (m_InputField != null)
+		if (onInputClickedSB != null)
 		{
 			if (results.GetKeyCode() == IMEManager.InputResult.Key.BACKSPACE)
 			{
 				Log.d(LOG_TAG, "on clicked BACKSPACE key");
-				if (m_InputField.textComponent.text.Length > 1)
+				if (onInputClickedSB.Length > 1)
 				{
-					mInputContent = m_InputField.textComponent.text.Substring(0, m_InputField.textComponent.text.Length - 1);
+					mInputContent = (onInputClickedSB.Length -1).ToString();
 				}
-				else if (m_InputField.textComponent.text.Length == 1)
+				else if (onInputClickedSB.Length == 1)
 				{
 					mInputContent = "";
 				}
