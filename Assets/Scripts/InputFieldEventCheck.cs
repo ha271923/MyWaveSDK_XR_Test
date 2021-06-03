@@ -108,6 +108,41 @@ public class InputFieldEventCheck : MonoBehaviour
         return addedChar;
     }
 
+    #region eventData_Example
+    /*
+     OnPointerClick: eventData=
+    <b>Position</b>: (1600.0, 800.0)
+    <b>delta</b>: (0.0, 0.0)
+    <b>eligibleForClick</b>: True
+    <b>pointerEnter</b>:
+    <b>pointerPress</b>: InputField (UnityEngine.GameObject)
+    <b>lastPointerPress</b>:
+    <b>pointerDrag</b>: InputField (UnityEngine.GameObject)
+    <b>Use Drag Threshold</b>: True
+    <b>Current Raycast:</b>
+    Name: Caret (UnityEngine.GameObject)
+    module: Name: Left Menu Canvas (UnityEngine.GameObject)
+    eventCamera: DominantPointerCamera (UnityEngine.Camera)
+    sortOrderPriority: -2147483648
+    renderOrderPriority: -2147483648
+    distance: 2.256445
+    index: 0
+    depth: 6
+    worldNormal: (0.0, 0.0, -1.0)
+    worldPosition: (0.1, 1.7, 6.0)
+    screenPosition: (1600.0, 800.0)
+    module.sortOrderPriority: -2147483648
+    module.renderOrderPriority: -2147483648
+    sortingLayer: 0
+    sortingOrder: 0
+    <b>Press Raycast:</b>
+    Name: InputField (UnityEngine.GameObject)
+    module: Name: Left Menu Canvas (UnityEngine.GameObject)
+    eventCamera: DominantPointerCamera (UnityEngine.Camera)
+    sortOrderPriority: -2147483648
+    renderOrderPriority: -2147483648
+     */
+#endregion
     public void OnPointerClick(PointerEventData eventData)
     {
         Log.d(LOG_TAG, "OnPointerClick: eventData="+ eventData);

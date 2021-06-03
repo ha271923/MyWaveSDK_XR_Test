@@ -4,9 +4,10 @@
 #pragma warning disable 0219
 #pragma warning disable 0414
 
+using Wave.Essence;
 using Wave.Native;
 
-namespace Wave.Essence
+namespace Hubble.Launcher.Input
 {
 	public class IMEManagerWrapper2
 	{
