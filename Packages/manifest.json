@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "com.htc.upm.vive-input-utility": "1.12.0",
+    "com.htc.upm.vive-input-utility": "1.13.1",
     "com.htc.upm.wave.essence": "3.99.48-preview.1",
     "com.htc.upm.wave.native": "3.99.48-preview.1",
     "com.htc.upm.wave.xrsdk": "3.99.48-preview.1",
+    "com.unity.assetbundlebrowser": "1.7.0",
+    "com.unity.assetgraph": "1.7.2-preview",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.1",
@@ -11,6 +13,7 @@
     "com.unity.textmeshpro": "2.1.1",
     "com.unity.timeline": "1.2.16",
     "com.unity.ugui": "1.0.0",
+    "com.unity.xr.oculus": "1.4.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

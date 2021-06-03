@@ -125,9 +125,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 11400000, guid: 830b4df877d4f7447b604b70e23d0b0b, type: 2}
-  - {fileID: 6396194380788074041, guid: e79ab5f0b99abd34b8c42f256555f7e7, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -673,8 +671,18 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_PLUGIN;VIU_PACKAGE
-    7: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_PLUGIN;VIU_PACKAGE;VIU_WAVEVR_SUPPORT
+    1: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_PLUGIN;VIU_PACKAGE;TextMeshPro
+    4: TextMeshPro
+    7: VIU_XR_GENERAL_SETTINGS;VIU_XR_PACKAGE_METADATA_STORE;VIU_PLUGIN;VIU_PACKAGE;VIU_WAVEVR_SUPPORT;VIU_SIUMULATOR_SUPPORT;TextMeshPro;VIU_WAVEXR_ESSENCE_CONTROLLER_MODEL;VIU_WAVE_XRSDK_3_99_31_OR_NEWER;VIU_WAVEVR_HAND_TRACKING;VIU_WAVEVR_CONTROLLER_RENDERMODEL
+    13: TextMeshPro
+    14: TextMeshPro
+    19: TextMeshPro
+    21: TextMeshPro
+    25: TextMeshPro
+    27: TextMeshPro
+    28: TextMeshPro
+    29: TextMeshPro
+    30: TextMeshPro
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
