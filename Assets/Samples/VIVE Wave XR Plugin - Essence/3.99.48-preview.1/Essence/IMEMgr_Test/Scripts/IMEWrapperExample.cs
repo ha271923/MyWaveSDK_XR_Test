@@ -31,7 +31,7 @@ public class IMEWrapperExample : MonoBehaviour {
 	}
 
     private void InputDoneCallback(IMEManagerWrapper.InputResult results) {
-		Log.d(LOG_TAG, "inputDoneCallback:" + results.GetContent());
+		Log.d(LOG_TAG, "inputDoneCallback: " + results.GetContent());
 		mInputContent = myInputField.textComponent.text + results.GetContent();
 		// Note: directly update input field text in UI thread will exception
 		// use LastUpdate to update Input field text
@@ -39,7 +39,7 @@ public class IMEWrapperExample : MonoBehaviour {
 	}
 	private void InputClickCallback(IMEManagerWrapper.InputResult results)
 	{
-		Log.d(LOG_TAG, "inputDoneCallback:  clickedKeyChar=" + results.GetContent());
+		Log.d(LOG_TAG, "inputClickCallback:  clickedKeyChar=" + results.GetContent());
 
 		// Note: directly update input field text in UI thread will exception
 		// use LastUpdate to update Input field text
@@ -69,8 +69,9 @@ public class IMEWrapperExample : MonoBehaviour {
 			}
 			else
 			{
+				Log.d(LOG_TAG, "inputClickCallback   myInputField.text = " + myInputField.text + "myInputField.textComponent.text = " + myInputField.textComponent.text); // BUG: myInputField.text and myInputField.textComponent are empty always.
 				mInputContent = myInputField.textComponent.text + results.GetContent();
-				Log.d(LOG_TAG, "inputDoneCallback   mInputContent=" + mInputContent);
+				Log.d(LOG_TAG, "inputClickCallback   mInputContent=" + mInputContent);
 			}
 		}
 
