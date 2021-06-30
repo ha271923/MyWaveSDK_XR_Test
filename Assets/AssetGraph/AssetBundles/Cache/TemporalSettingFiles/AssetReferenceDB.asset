@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
+  m_Name: AssetReferenceDB
+  m_EditorClassIdentifier: 
+  m_assets:
+  - m_assetDatabaseId: 1d0183c0320fb474695e3289042bddae
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 017412e69b40edb4cb79dfb55a0b0ab7
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: befac0ed864a1cf4782808a38f020a04
+    m_importFrom: Assets/AssetGraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b836882f4fea93541ade78918139f861
+    m_importFrom: Assets/AssetGraph/AssetBundles
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: af6836dc36ffaa04b99782793596c2cc
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 67ef584b2357d9847812242d7ea4cf97
+    m_importFrom: Assets/Scenes/CommonVariableEvent_Test.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00000000000000009000000000000000
+    m_importFrom: ProjectSettings/QualitySettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00000000000000005000000000000000
+    m_importFrom: Library/BuildPlayer.prefs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 18476760edd5f944ba3fd48145ae12cc
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelSteamVRSkeletonRight.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 635ba5f0b840cc54ba6ac023a6c9b3fe
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelOculusTrackedHandRight.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c31cdc02bae28ae49b0fc79797ffaa44
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/TouchSlider.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d47aad82a5847fc408a6f211d6393d72
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/TouchButton.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd2f2345db29b6549a1608bd93b0b30c
+    m_importFrom: Assets/Samples/VIVE Wave XR Plugin/3.99.48-preview.1/PureUnity/Common/KeyboardMouseControl/Prefabs/KMC.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bfc4db56e2066d74d9d1ad7050821556
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelWaveTrackedHandLeft.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f64ed917a7e3d044d8d831b345edca5d
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Scripts/ControllerTooltip/DefaultTooltipPrefab.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef84bc17eeeaf064f89b2cf8a0296fb5
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/StuckablePushButton.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c7eebf4782ce6334882e1ed849de995a
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/PushButton.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 98522ed7bfcf68948b46e330d95d9950
+    m_importFrom: Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Prefabs/RangeFinder.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d43326885e62c5d43a7753e075cadf56
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelSteamVRSkeletonLeft.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 411d3ba9c8445044a92145b700a6aa3f
+    m_importFrom: Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Prefabs/CubemapCube.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 42b3abba4c59ab141ac0d0ec51321a4d
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelOculusTrackedHandLeft.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9056320bb10a21a4782b8dbfe5870461
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelWaveLegacyTrackedHandLeft.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 515b4a9be18b50043bcecf19554b797d
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelWaveTrackedHandRight.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b9a887fb50be38e4e84f6bfbbc26d57d
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelViveHandTrackingTrackedHandRight.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fca4ff7cdb75de14b924a90df8253de1
+    m_importFrom: Assets/Samples/VIVE Wave XR Plugin/3.99.48-preview.1/PureUnity/Common/Tools/Prefabs/DebugTools.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d5a2d8c358f9ac4db78338a3e18c7a2
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelWaveLegacyTrackedHandRight.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2e3db77dfa875804c9823ee826de1d8b
+    m_importFrom: Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/SeaOfCube/Prefabs/Rulers250.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 330676ddf7f046e4c91d6732d14d216b
+    m_importFrom: Packages/com.htc.upm.vive-input-utility/ViveInputUtility/Resources/Models/VIUModelViveHandTrackingTrackedHandLeft.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ab220fb02d665b459fb411f670d76d3
+    m_importFrom: Assets/Scenes/MyTests.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b0158f1bc950be4f86959d5b1cb5243
+    m_importFrom: Assets/Scripts/PrintMessage.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00000000000000004000000000000000
+    m_importFrom: ProjectSettings/ProjectSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0000000000000000b000000000000000
+    m_importFrom: ProjectSettings/EditorBuildSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  m_version: 2
