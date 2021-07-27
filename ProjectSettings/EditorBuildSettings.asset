@@ -17,9 +17,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MyTests.unity
     guid: 8ab220fb02d665b459fb411f670d76d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MyButtons.unity
     guid: 0a592e46bf3c14f408aac30b75f5c8a2
+  - enabled: 0
+    path: Assets/Samples/VIVE Wave XR Plugin - Essence/3.99.48-preview.1/Essence/ButtonTest/ButtonTest.unity
+    guid: a3d72d03107354b42aac2da36ff8b585
+  - enabled: 1
+    path: Assets/AVProVideo/Demos/Scenes/WaveSDK_360Stereo.unity
+    guid: 4ff73e8f425f94a4c9411b4c98522b4a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9807877e37124f449b514590e663f47b,
       type: 2}
